@@ -9,7 +9,7 @@ mongoose.connect(process.env.MONGO_URL)
 //3001 is port for server, 3000 is port for client
 //origin is client address
 //top part is server
-const io = require('socket.io')(http.createServer().listen(3001), {
+const io = require('socket.io')(http.createServer().listen(process.env.PORT), {
   cors: { origin: process.env.CLIENT_URL, methods: ['POST', 'GET'] },
 })
 
